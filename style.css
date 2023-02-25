@@ -1,0 +1,152 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header */
+
+header {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4d4dff;
+}
+
+header::after{
+    content: '';
+    width: 80%;
+    height: 1px;
+    background-color: white;
+    position: absolute;
+    top: 80px;
+}
+
+header h1 {
+    color: white;
+}
+
+/* Container */
+
+.container {
+    width: 100%;
+    height: calc(100vh - 140px);
+    background: rgb(77,77,255);
+    background: linear-gradient(180deg, rgba(77,77,255,1) 0%, rgba(54,85,179,1) 100%);
+    padding: 30px 0;
+}
+
+.tarefa-input {
+    max-width: 400px;
+    height: 80px;
+    background-color: white;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0px 0.3px 4px 0px rgba(0,0,0,0.25);
+    padding: 15px;
+}
+
+.tarefa-input input {
+    padding: 5px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px rgba(0,0,0,0.25) solid;
+    width: 90%;
+}
+
+.tarefa-input button {
+    font-size: 1rem;
+    font-weight: 700;
+    background-color: #4d4dff;
+    border-style: none;
+    border-radius: 5px;
+    color: white;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.tarefa-lista {
+    max-width: 400px;
+    height: fit-content;
+    background-color: white;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0px 0.3px 4px 0px rgba(0,0,0,0.25);
+    padding: 15px;
+    margin-top: 30px;
+}
+
+.tarefa {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1.5px rgba(0,0,0,0.25) solid;
+}
+
+
+.tarefa p {
+    font-family: Ubuntu, sans-serif;
+    font-weight: 400;
+}
+
+.tarefa button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    background-color: #ff4d4d;
+    cursor: pointer;
+}
+
+/* Footer */
+
+footer {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3655b3;
+    text-align: center;
+}
+
+footer::before{
+    content: '';
+    width: 80%;
+    height: 1px;
+    background-color: white;
+    position: absolute;
+    bottom: 60px;
+}
+
+footer p {
+    color: white;
+    font-weight: 700;
+}
+
+/* Media Queries */
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    
+}
+
+@media screen and (max-width: 767px) {
+   
+}
+
+@media screen and (max-width: 515px) {
+    .tarefa-input {
+        width: 80%;
+    }
+}
