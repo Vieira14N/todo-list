@@ -1,32 +1,35 @@
-const tarefaInput = document.getElementById('tarefa');
-const listaDeTarefas = document.querySelector('.tarefa-lista');
+const tarefaInput = document.getElementById('tarefa'); //valor input
+const listaDeTarefas = document.querySelector('.tarefa-lista'); //parent element
 const botaoAdicionar = document.querySelector('.adicionar');
 
 //adicionar tarefa
-
-function adicionarTarefa(valorInput) {
-    const tarefa = `<div class="tarefa"> <p>${valorInput}</p><button>x</button></div>`;
-    listaDeTarefas.insertAdjacentHTML("beforeend", tarefa);
-    console.log('clicou');
+function criarElemento(input) {
+    const tarefa = document.createElement('div')
+    tarefa.innerHTML = `<p>${input}</p><button>x</button>`
+    tarefa.classList.add('tarefa')
+    listaDeTarefas.appendChild(tarefa)
 }
 
 botaoAdicionar.addEventListener('click', () => {
-    adicionarTarefa(tarefaInput.value);
-})
+    criarElemento(tarefaInput.value);
 
-//remover tarefa
+    const botoesRemover = document.querySelectorAll('.tarefa button');
+    const tarefas = document.querySelectorAll('.tarefa');
 
-const tarefas = Array.from(document.querySelectorAll('.tarefa'));
-const botoesRemover = Array.from(document.querySelectorAll('.tarefa button'));
-
-botoesRemover.forEach((e, index) => {
-    e.addEventListener('click', (e) => {
-        console.log(index)
+    botoesRemover.forEach((e,index) => {
+        e.addEventListener('click', e => {
+            tarefas.forEach((t,indexT) => {
+                t.addEventListener('click', t => {
+                    if(index === indexT){
+                        t.target.parentElement.remove()
+                    }
+                })
+            })
+        })
     })
 })
 
-tarefas.forEach((e, index) => {
-    e.addEventListener('click', (e) => {
-        console.log(index)
-    })
-})
+
+
+
+
